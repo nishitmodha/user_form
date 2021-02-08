@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :city, presence: true
     validates :state, presence: true
     validates :country, presence: true
-    validates :linkedin, presence: true
+    validates :linkedin, presence: true, uniqueness: true
     validates :school, presence: true
     validates :university, presence: true
 
