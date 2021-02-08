@@ -1,0 +1,82 @@
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+        <h1> Personal Details </h1>
+        <div class="field form-group w-25">
+            <%= f.input :first_name ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :last_name ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :email ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-50">
+            <%= f.date_field :dob ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :phone_number ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :address ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.country_select :country, prompt: "Select a Country", class: "custom-select" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :state ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :city ,class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="col">
+        <h1>Professional Details</h1>
+
+        <div class="field form-group w-25">
+            <%= f.input :linkedin ,class: "form-control" %>
+        </div>
+
+        <div class="field form-group w-25">
+            <%= f.input :skills ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :certifications ,class: "form-control" %>
+        </div>
+
+         <div class="field form-group w-25">
+            <%= f.input :school ,class: "form-control" %>
+        </div>
+
+        <div class="field form-group w-25">
+            <%= f.input :university ,class: "form-control" %>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-dark" %>
+  </div>
+
+</div>
+
+<% end %>
+
+
+
